@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://27.0.0.1:27017/sleekpack");
-
 const userSchema = mongoose.Schema({
     fullname:String,
     email:String,
