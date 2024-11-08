@@ -1,10 +1,13 @@
 const mongoose= require('mongoose');
+const config = require('config');
+const dbgr = require("debug")("development:mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/sleekpack")
+
+mongoose.connect(`${config.get("MONGODB_URI")}/sleepack`)
 .then(function(){
-    console.log("connected");
+    dbgr("connected");
 }).catch(function(err){
-    console.log(err);
+   dbgr("error");
 })
 
 module.exports =mongoose.connection;
